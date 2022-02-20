@@ -1,0 +1,121 @@
+import {
+  ChartComponent,
+  ApexAxisChartSeries,
+  ApexChart,
+  ApexXAxis,
+  ApexDataLabels,
+  ApexStroke,
+  ApexYAxis,
+  ApexTitleSubtitle,
+  ApexLegend,
+  ApexTooltip,
+  ApexFill
+} from "ng-apexcharts";
+export type ChartOptions = {
+  series: ApexAxisChartSeries;
+  chart: ApexChart;
+  xaxis: ApexXAxis;
+  yaxis: ApexYAxis;
+  stroke: ApexStroke;
+  tooltip: ApexTooltip;
+  dataLabels: ApexDataLabels;
+  fill: ApexFill;
+
+};
+
+
+    this.chartOptions = {
+      series: [
+        {
+          name: "Temp. Nozzle",
+          type: 'area',
+          data: []
+        },
+        {
+          name: "Target Temp",
+          type: 'line',
+          data: []
+        }
+      ],
+      chart: {
+        type: "line",
+        foreColor: '#ffffff',
+        height: '300px',
+        toolbar: {
+          show: false
+        }
+      },
+      dataLabels: {
+        enabled: false
+      },
+      stroke: {
+        curve: "smooth"
+      },
+      xaxis: {
+        floating: true,
+        categories: [],
+        tickAmount: 200,
+        overwriteCategories:[]
+      },
+      yaxis: {
+        logarithmic: true,
+        forceNiceScale: true,
+        min: 0,
+        max: 150,
+        tickAmount: 100,
+      },
+      tooltip: {
+        enabled: true,
+        enabledOnSeries: undefined,
+        shared: true,
+        followCursor: false,
+        intersect: false,
+        inverseOrder: false,
+        custom: undefined,
+        fillSeriesColor: false,
+        theme: "dark",
+        style: {
+          fontSize: '12px',
+          fontFamily: undefined
+        },
+        onDatasetHover: {
+          highlightDataSeries: false,
+        },
+        x: {
+          show: true,
+          format: 'dd MMM',
+          formatter: undefined,
+        },
+        y: {
+
+          formatter: undefined,
+          title: {
+            formatter: (seriesName) => seriesName + " °C",
+          },
+        },
+        z: {
+          formatter: undefined,
+          title: 'Size: '
+        },
+        marker: {
+          show: true,
+        },
+        // items: {
+        //   display: flex,
+        // },
+        fixed: {
+          enabled: false,
+          position: 'topRight',
+          offsetX: 0,
+          offsetY: 0,
+        },
+      },
+      fill: {
+        type: "solid",
+        opacity: [0.35, 1],
+        gradient: {
+          shade: "dark",
+          shadeIntensity: 0.2,
+        },
+      },
+    };

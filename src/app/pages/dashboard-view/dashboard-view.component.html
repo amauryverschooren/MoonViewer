@@ -1,0 +1,89 @@
+<mat-drawer-container  class="example-container" autosize [hasBackdrop]="true">
+  <mat-drawer #drawer class="example-sidenav" mode="over"> Klipper </mat-drawer>
+
+
+  <mat-drawer-content class="drawer-content">
+
+
+    <mat-toolbar color="primary">
+      <mat-toolbar-row>
+        <button type="button" mat-icon-button (click)="drawer.toggle()" class="example-icon"
+          aria-label="Example icon-button with menu icon">
+          <mat-icon>menu</mat-icon>
+        </button>
+        <span>Klipper Dashboard</span>
+        <span class="example-spacer"></span>
+      </mat-toolbar-row>
+    </mat-toolbar>
+
+
+    <div class="grid-container">
+      <h1 class="mat-h1">{{this.serverInfo.result.hostname}}</h1>
+          <mat-expansion-panel class="dropdownTileTemp">
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                Temperatuur
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <div class="tempDiv">
+              <mat-icon svgIcon="tempCurrent" style="color: #FF5252; font-size: 20px;"></mat-icon>
+              Nozzle
+              <span id="tempValue">{{this.printerTemps.nozzleCurrent}}°C / {{this.printerTemps.nozzleTarget}}°C</span>
+            </div>
+            <mat-divider></mat-divider>
+            <div class="tempDiv">
+              <mat-icon svgIcon="tempCurrent" style="color: #1FB0FF; font-size: 20px;"></mat-icon>
+              Bed
+              <span id="tempValue">{{this.printerTemps.bedCurrent}}°C / {{this.printerTemps.bedTarget}}°C</span>
+            </div>
+            <mat-divider></mat-divider>
+            <div class="tempDiv">
+              <mat-icon svgIcon="thermometer" style="color: #D67600; font-size: 20px;"></mat-icon>
+              Mcu
+              <span id="tempValue">{{this.printerTemps.mcuCurrent}}°C</span>
+            </div>
+            <mat-divider></mat-divider>
+            <div class="tempDiv">
+              <mat-icon svgIcon="thermometer" style="color: #830EE3; font-size: 20px;"></mat-icon>
+              Pi
+              <span id="tempValue">{{this.printerTemps.piCurrent}}°C</span>
+            </div>
+          </mat-expansion-panel>
+
+          <mat-expansion-panel class="dropdownTileTemp">
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                Controls
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+
+            <div class="controlGrid">
+              <div class="item1 item" (click)="controlGCode('links')">
+                <mat-icon class="controlIcon" aria-hidden="false" aria-label="Example arrow_back icon">arrow_back</mat-icon>
+              </div>
+              <div class="item2 item" (click)="controlGCode('omhoogbed')">
+                <mat-icon class="controlIcon" aria-hidden="false" aria-label="Example arrow_upward icon">arrow_upward</mat-icon>
+              </div>
+              <div class="item3 house" (click)="controlGCode('homebed')">
+                <mat-icon class="controlIcon" aria-hidden="false" aria-label="Example home icon">home</mat-icon>
+              </div>
+              <div class="item4 item" (click)="controlGCode('omlaagbed')">
+                <mat-icon class="controlIcon" aria-hidden="false" aria-label="Example arrow_downward icon">arrow_downward</mat-icon>
+              </div>
+              <div class="item5 item" (click)="controlGCode('rechts')">
+                <mat-icon class="controlIcon" aria-hidden="false" aria-label="Example arrow_forward icon">arrow_forward</mat-icon>
+              </div>
+              <div class="item6 item" (click)="controlGCode('omhoognozzle')">
+                <mat-icon class="controlIcon" aria-hidden="false" aria-label="Example arrow_upward icon">arrow_upward</mat-icon>
+              </div>
+              <div class="item7 house" (click)="controlGCode('homenozzle')">
+                <mat-icon class="controlIcon" aria-hidden="false" aria-label="Example home icon">home</mat-icon>
+              </div>
+              <div class="item8 item" (click)="controlGCode('omlaagnozzle')">
+                <mat-icon class="controlIcon" aria-hidden="false" aria-label="Example arrow_downward icon">arrow_downward</mat-icon>
+              </div>
+            </div>
+          </mat-expansion-panel>
+    </div>
+  </mat-drawer-content>
+</mat-drawer-container>
