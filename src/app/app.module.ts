@@ -15,13 +15,15 @@ import { NgChartsModule } from 'ng2-charts';
 import { NgApexchartsModule } from 'ng-apexcharts';
 import { AngularSvgIconModule } from 'angular-svg-icon';
 import { ToastrModule } from 'ngx-toastr';
+import { DialogComponent } from './pages/dashboard-view/Dialog/dialog/dialog.component';
+import {NgxFilesizeModule} from 'ngx-filesize';
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     DashboardViewComponent,
     SplashScreenComponent,
-
+    DialogComponent,
   ],
   imports: [
     BrowserModule,
@@ -35,7 +37,8 @@ import { ToastrModule } from 'ngx-toastr';
     ReactiveFormsModule,
     NgApexchartsModule,
     ToastrModule.forRoot(),
-    AngularSvgIconModule.forRoot()
+    AngularSvgIconModule.forRoot(),
+    NgxFilesizeModule
     
   ],
   providers: [],

@@ -1,0 +1,20 @@
+<h2 mat-dialog-title>File Preview</h2>
+<mat-dialog-content class="mat-typography">
+  <div class="filesNoDivider">
+    <div *ngIf="file.file.metadata.thumbnails">
+      <img [src]="file.file.metadata.thumbnails![0].thumbnailLink" alt="">
+    </div>
+    <div id="fileName">{{file.file.file.path}}</div>
+  </div>
+
+  <div>
+    <p>Estimated Time: {{(file.file.metadata.estimated_time/60)/60 | number: '1.0-1'}} h</p>
+    <p>Total filament: {{file.file.metadata.filament_total/1000 | number: '1.0-2'}} m</p>
+    <p>Sliced with: {{file.file.metadata.slicer}}</p>
+    <p>File Size: {{(file.file.metadata.size/1024)/1024 | number: '1.0-1'}} Mb</p>
+  </div>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Cancel</button>
+  <button mat-button [mat-dialog-close]="true" cdkFocusInitial>Print!</button>
+</mat-dialog-actions>
