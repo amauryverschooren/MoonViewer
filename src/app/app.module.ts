@@ -17,6 +17,7 @@ import { AngularSvgIconModule } from 'angular-svg-icon';
 import { ToastrModule } from 'ngx-toastr';
 import { DialogComponent } from './pages/dashboard-view/Dialog/dialog/dialog.component';
 import {NgxFilesizeModule} from 'ngx-filesize';
+import { IonicModule } from '@ionic/angular';
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,7 +39,8 @@ import {NgxFilesizeModule} from 'ngx-filesize';
     NgApexchartsModule,
     ToastrModule.forRoot(),
     AngularSvgIconModule.forRoot(),
-    NgxFilesizeModule
+    NgxFilesizeModule,
+    IonicModule.forRoot()
     
   ],
   providers: [],
